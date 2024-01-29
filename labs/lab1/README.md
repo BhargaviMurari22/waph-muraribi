@@ -32,14 +32,17 @@ HTTP Stream
 To use Telnet to perform HTTP tests, I entered "$telnet example.com 80" on my terminal. Following that, I typed the instructions' "GET /index.html HTTP/1.0" and "Host: example.com" commands. The HTTP request I had made and the response I received from the server were then shown by the command prompt, giving me a glimpse of the exchange that was taking place between the computer and the example.com web server.
 
   1. A screenshot of your terminal showing the HTTP Request and HTTP response from the server.
+
 ![IMAGE-4](../../images/IMAGE-4.png)
 Terminal with Telnet
 
   2. REQUEST: The HTTP request sent in Wireshark Task 1 is similar to the snapshot that was taken using Telnet. Although Wireshark offers more detailed information, Telnet queries still include necessary components such as the host site, HTTP version, and "GET" method. Beyond the fundamental elements observed in Telnet, Wireshark's expert details include information regarding the "GET" request, severity levels, and arranged groupings.
+
 ![IMAGE-5](../../images/IMAGE-5.png)
 Telnet Request
 
   3. RESPONSE: The host site's HTTP version and a successful "200 OK" status are displayed in the Telnet snapshot, which is a reflection of the HTTP response from Wireshark Task 1. Nevertheless, Wireshark goes above and above by offering a wealth of information, such as Response version, Status code, Response Phrase, content type, date of update, content length, and time and date of expiration. All in all, Wireshark provides a more thorough analysis of every answer line than Telnet does for the crucial information.
+
 ![IMAGE-6](../../images/IMAGE-6.png)
 
 ## Part II - Basic Web Application Programming
@@ -78,19 +81,33 @@ echo "Hello World, this is the first PHP by Bhargavi, WAPH";
 phpinfo();
 ?>
 ```
+ ![IMAGE-9](../../images/IMAGE-9.png) 
  
 b. I created a "echo.php" file in Sublime Text, used the command "$ sudo cp echo.php /var/www/html" to move it to the web server, then used a browser to view it locally.
 ```
-
+<?php
+echo $_REQUEST["data"];
+?>
 ```
+![IMAGE-10](../../images/IMAGE-10.png) 
 
 ### Task 3 (10 pts). Understanding HTTP GET and POST requests.
 
-a. Briefly describe how you used Wireshark to examine the HTTP GET Request and Response for the `echo.php` page with your name in the data. Demonstrate with two corresponding screenshots in Wireshark. **(2.5 pts)**
+a. Using Wireshark, I examined the POST and GET HTTP requests made by the "echo.php" application. I used Wireshark to record from any network before starting the server, and I took screenshots while examining and recording the requests and responses using the http filter.
 
-b. Summarize using `curl` to create an HTTP POST request with your name in the data. Demonstrate the outcome with a screenshot from the `curl` program **(2.5 pts)**, and a screenshot of the corresponding HTTP Stream in Wireshark. **(2.5 pts)**
+![IMAGE-11](../../images/IMAGE-11.png) 
+Echo REQUEST Screenshot
+![IMAGE-12](../../images/IMAGE-12.png) 
+Echo RESPONSE Screenshot
 
-c. Compare the similarity/difference between HTTP POST Request and HTTP GET Request and between the two HTTP Responses above. **(2.5 pts)**    
+b. After using "sudo apt install curl" to install Curl on Ubuntu, I ran a command, as seen in the screenshot of the command prompt. I was able to view the HTTP request and response using Wireshark by right-clicking on the request and choosing the HTTP stream. Refer to the screenshot that is included.
+
+![IMAGE-13](../../images/IMAGE-13.png) 
+Echo STREAM Screenshot
+
+c. Similarities and Differences: 
+Headers add extra information during the HTTP request and response cycle, including POST. POST is not visible in the address bar; GET is preferred for smaller data; and POST is used for data submission; GET is used for retrieval with parameters in the URL. These are the main distinctions.
+
 
 ## Submission
 
