@@ -44,7 +44,7 @@ Telnet Request
 
 ## Part II - Basic Web Application Programming
 
-###   Task 1. CGI Web applications in C
+###   Task 1: CGI Web applications in C
 
    a. I edited my C program in Sublime Text, compiled it with "gcc," and ran the executable on the web server using specific commands. The iterative process ensured code modifications were tested and deployed effectively.
  ```
@@ -55,23 +55,25 @@ printf("Hello World CGI! From BHARGAVI, WAPH\n\n");
 return 0;
 }
 ```
+![IMAGE-7](../../images/IMAGE-7.png)
 
    b. The "index.c" file's structure is shown in a screenshot, which also features a URL the professor gave.
-   '''
-   
-   Included file `helloworld.c`:
-   ```C
-      #include <stdio.h>
-      int main(void) {
-        printf("Content-Type: text/plain; charset=utf-8\n\n");
-        printf("Hello World CGI! From Phu Phung, WAPH\n\n");
-        return 0;
-      }
    ```
+   #include<stdio.h>
+int main(void)
+{
+printf("Content-Type: text/html\n\n");
+printf("<html><head><h1>Name: BHARGAVI MURARI</h1><h2>DEpartment: INFORMATION TECHNOLOGY</h2><p>This is web programming Hands-on lab</p></head></html>");
+return 0;
+}
+```
+ ![IMAGE-8](../../images/IMAGE-8.png)  
+ 
+###  Task 2: A simple PHP Web Application with user input.
 
-###  Task 2 (10 pts). A simple PHP Web Application with user input.
-
-a. **(2.5 pts)** Summarize and demonstrate with a screenshot that you have successfully developed a simple `helloworld.php` PHP page with your name and PHP configuration as guided in Lecture 3. 
+a. I created a "helloworld.php" file in Sublime Text, used the command "$ sudo cp helloworld.php /var/www/html" to move it to the web server, then used a browser to view it locally.
+```
+ 
 
 b. Demonstrate that you developed and deployed an echo Web application in PHP, e.g., `echo.php` with a screenshot with your name in the data **(2.5 pts)**. Include the source code of the file in the report and discuss if there are any security risks in this simple web application. **(5 pts)**
 
