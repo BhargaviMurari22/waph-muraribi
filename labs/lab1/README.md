@@ -73,9 +73,16 @@ return 0;
 
 a. I created a "helloworld.php" file in Sublime Text, used the command "$ sudo cp helloworld.php /var/www/html" to move it to the web server, then used a browser to view it locally.
 ```
+<?php
+echo "Hello World, this is the first PHP by Bhargavi, WAPH";
+phpinfo();
+?>
+```
  
+b. I created a "echo.php" file in Sublime Text, used the command "$ sudo cp echo.php /var/www/html" to move it to the web server, then used a browser to view it locally.
+```
 
-b. Demonstrate that you developed and deployed an echo Web application in PHP, e.g., `echo.php` with a screenshot with your name in the data **(2.5 pts)**. Include the source code of the file in the report and discuss if there are any security risks in this simple web application. **(5 pts)**
+```
 
 ### Task 3 (10 pts). Understanding HTTP GET and POST requests.
 
