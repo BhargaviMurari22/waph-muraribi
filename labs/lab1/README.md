@@ -47,10 +47,17 @@ Telnet Request
 ###   Task 1. CGI Web applications in C
 
    a. I edited my C program in Sublime Text, compiled it with "gcc," and ran the executable on the web server using specific commands. The iterative process ensured code modifications were tested and deployed effectively.
-   '''C
+ ```
+   #include <stdio.h>
+int main(void) {
+printf("Content-Type: text/plain; charset=utf-8\n\n");
+printf("Hello World CGI! From BHARGAVI, WAPH\n\n");
+return 0;
+}
+```
 
-   
-   b. **(5 pts)** Summarize and demonstrate with a screenshot that you can write another C CGI program and deploy it with a simple HTML template provided on https://www.w3schools.com/html/ with proper title, heading, and paragraph, i.e., the course and your information should be there. Include the source code of the file in the report. An example of code inclusion is below.
+   b. The "index.c" file's structure is shown in a screenshot, which also features a URL the professor gave.
+   '''
    
    Included file `helloworld.c`:
    ```C
