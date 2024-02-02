@@ -34,15 +34,16 @@ Waph-muraribi.html file opened in Mozilla Firefox after creating a form
 ![IMG-3](imageslab2/IMG-3.png)
 
 This file was run since I utilized the Action method, made a GET request in the form, and set it to echo.php. html code for that can be found here:
+
  ```
  <b> Interaction with forms</b>
- <div>
- <i>Form with an HTTP GET Request</i>
- <form action="Echo.php" method="GET">
- Your input: <input name="data">
- <input type="submit" value="Submit">
- </form>
- </div>
+		<div>
+			<i>Form with an HTTP GET Request</i>
+			<form action="echo.php" method="GET">
+				Your input: <input name="data">
+				<input type="submit" value="Submit">
+			</form>
+		</div>
 
 ```
 This is the final result that the user's browser shows once they click the submit button.
