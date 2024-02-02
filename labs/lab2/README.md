@@ -7,7 +7,9 @@
 **Name**: Bhargavi Murari
 
 **Email**: muraribi@mail.uc.edu
+
 ![Bhargavi's headshot](imageslab2/headshot.png)
+
 ## Repository Information
 Repository's URL: [https://github.com/BhargaviMurari22/waph-muraribi.git](https://github.com/BhargaviMurari22/waph-muraribi.git)
 ## Lab2's Report:
