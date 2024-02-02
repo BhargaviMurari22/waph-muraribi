@@ -44,7 +44,6 @@ This file was run since I utilized the Action method, made a GET request in the 
 				<input type="submit" value="Submit">
 			</form>
 		</div>
-
 ```
 This is the final result that the user's browser shows once they click the submit button.
  
