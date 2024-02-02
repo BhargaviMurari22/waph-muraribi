@@ -21,7 +21,7 @@ The lab is divided into two sections: one covering forms in basic HTML and JavaS
 I created a simple HTML webpage called "waph-muraribi.html" using Sublime Editor. The website has forms made with image and input tags, as well as a headshot. I was able to view the webpage on Mozilla Firefox by going to "localhost/waph-muraribi.html" after hosting the HTML file on the server with the "$sudo cp waph-muraribi.html /var/www/html" command.
 Following is the screenshot.
 
-![img-1](../../imageslab2/img-1.png)
+![img-1](imageslab2/img-1.png)
 
 Waph-muraribi.html file opened in Mozilla Firefox after adding My Headshot using localhost/waph-muraribi.html
 
