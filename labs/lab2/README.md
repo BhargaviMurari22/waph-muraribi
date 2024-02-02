@@ -7,7 +7,7 @@
 **Name**: Bhargavi Murari
 
 **Email**: muraribi@mail.uc.edu
-![Bhargavi's headshot](../../images/headshot.jpg)
+![Bhargavi's headshot](imageslab2/headshot.png)
 ## Repository Information
 Repository's URL: [https://github.com/BhargaviMurari22/waph-muraribi.git](https://github.com/BhargaviMurari22/waph-muraribi.git)
 ## Lab2's Report:
@@ -25,11 +25,11 @@ Following is the screenshot.
 
 Waph-muraribi.html file opened in Mozilla Firefox after adding My Headshot using localhost/waph-muraribi.html
 
-![IMG-2](../../imageslab2/IMG-2.png)
+![IMG-2](imageslab2/IMG-2.png)
 
 Waph-muraribi.html file opened in Mozilla Firefox after creating a form
 
-![IMG-3](../../imageslab2/IMG-3.png)
+![IMG-3](imageslab2/IMG-3.png)
 
 This file was run since I utilized the Action method, made a GET request in the form, and set it to echo.php. html code for that can be found here:
  ```
@@ -44,24 +44,24 @@ This file was run since I utilized the Action method, made a GET request in the 
 ```
 This is the final result that the user's browser shows once they click the submit button.
  
- ![IMG-4](../../imageslab2/IMG-4.png)
+ ![IMG-4](imageslab2/IMG-4.png)
 
  I added a new form for POST, which is shown in this screenshot. 
 
-  ![IMG-5](../../imageslab2/IMG-5.png)
+  ![IMG-5](imageslab2/IMG-5.png)
 
 Similarly, here is a quick description of what caused a POST request to be made:
 
-  ![IMG-6](../../imageslab2/IMG-6.png)
+  ![IMG-6](imageslab2/IMG-6.png)
 
   b. Simple JavaScript
  I included inline JavaScript code into HTML elements to display the time and date as of right now. An example of how the inline script works is shown in a browser screenshot.
 
- ![IMG-7](../../imageslab2/IMG-7.png)
+ ![IMG-7](imageslab2/IMG-7.png)
 
  A key push causes the digital clock to refresh. Here, I held down a key for a while before pressing it. The updated time is displayed in the given snapshot by means of a script tag.
 
-![IMG-8](../../imageslab2/IMG-8.png)
+![IMG-8](imageslab2/IMG-8.png)
 
 I used Sublime Editor to create a "email.js" file that contained my email embedded in an HTML file. A script element was then used to link the "email.js" file to the HTML file. I added a div tag with the content "<div id="email" onclick="showhideEmail()">show my email</div>} inside the HTML body element. As specified in the "email.js" file, the goal is to show or hide the email when the div is clicked.
 
@@ -81,11 +81,11 @@ function showhideEmail(){
 ```
  The screenshot of the browser that shows the email hidden behind is below:
 
- ![IMG-9](../../imageslab2/IMG-9.png)
+ ![IMG-9](imageslab2/IMG-9.png)
 
   Here is an email screenshot that we can see by clicking on it:
 
-  ![IMG-10](../../imageslab2/IMG-10.png)
+  ![IMG-10](imageslab2/IMG-10.png)
 
 With the help of an external JavaScript code and the script tag, I have created an analog clock.
 The supplied library is shown below.
@@ -102,7 +102,7 @@ Furthermore, below my photo, I've printed the analog clock. That code is as foll
 
 The automatically updating analog clock snapshot is shown below:
 
-![IMG-11](../../imageslab2/IMG-11.png)
+![IMG-11](imageslab2/IMG-11.png)
 
 ### Task 2. Ajax, CSS, jQuery, and Web API integration
 a. Ajax:
@@ -131,9 +131,9 @@ function getEcho() {
 
 Here are two screenshots of the Ajax answer in the console and web browser.
 
-![IMG-12](../../imageslab2/IMG-12.png)
+![IMG-12](imageslab2/IMG-12.png)
 
-![IMG-13](../../imageslab2/IMG-13.png)
+![IMG-13](imageslab2/IMG-13.png)
 
 Ajax requests are made to the server-side script "Echo.php" via the JavaScript function getEcho in response to user input. An XMLHttpRequest object is created for an asynchronous GET request to the server after it gathers user input from an HTML input element and validates it. The information received from the server is shown by the callback function through the recording of data to the console and the update of an HTML element's content with the id "response" to reflect the responses. This is an example of a standard Ajax flow, where user actions dynamically update webpage content without requiring a full page reload. After that, the input field gets cleared.
 
@@ -167,9 +167,9 @@ Ajax requests are made to the server-side script "Echo.php" via the JavaScript f
 ```
  The screenshot of the webpage browser with the Cascading style added is shown below.
 
- ![IMG-14](../../imageslab2/IMG-14.png)
+ ![IMG-14](imageslab2/IMG-14.png)
 
- ![IMG-15](../../imageslab2/IMG-15.png)
+ ![IMG-15](imageslab2/IMG-15.png)
 
  c. The jQuery
  I utilized the CDN to use the JQuery library, so
@@ -203,7 +203,7 @@ Ajax requests are made to the server-side script "Echo.php" via the JavaScript f
 ```
 This is a screenshot of the network properties following the click of the Ajax Get echo button.
 
-![IMG-16](../../imageslab2/IMG-16.png)
+![IMG-16](imageslab2/IMG-16.png)
 
  ii. Posting Ajax Requests To complete the identical task as above, I used the JQueryAjaxPOST() method. and for that, the code is as follows:
 
@@ -221,11 +221,11 @@ This is a screenshot of the network properties following the click of the Ajax G
 ```
 The browser and console are shown in this screenshot of the Jquery post.
 
- ![IMG-17](../../imageslab2/IMG-17.png)
+ ![IMG-17](imageslab2/IMG-17.png)
 
  Using the POST method guarantees that the requested data is not visible in the URL, in contrast to the GET method which exposes data in the URL. The POST method is typically chosen over GET because of its increased security.
 
- ![IMG-18](../../imageslab2/IMG-18.png)
+ ![IMG-18](imageslab2/IMG-18.png)
 
  d. Web API integration
  i. To send a request to the "https://v2.jokeapi.dev/joke/Programming?type=single" API, I used JQuery Ajax. The humorous portion of the API response will be extracted and shown by the JavaScript code. The snippet of code for this capability is shown below.
@@ -238,7 +238,7 @@ $.get("https://v2.jokeapi.dev/joke/Programming?type=single",function(result){
 ```
 This is a screenshot of the console output that I took after looking at the code:
 
- ![IMG-19](../../imageslab2/IMG-19.png)
+ ![IMG-19](imageslab2/IMG-19.png)
 
   ii. I used the "https://api.agify.io/?name=input" retrieve API to display the age at random. After a user inputs their name and clicks the HTML "Guess Age" button, the age data is retrieved and displayed using the get API.
 
@@ -257,5 +257,5 @@ async function guessAge(name){
 ```
 This is an image of the output when the age data is shown:
 
- ![IMG-20](../../imageslab2/IMG-20.png)
+ ![IMG-20](imageslab2/IMG-20.png)
 
