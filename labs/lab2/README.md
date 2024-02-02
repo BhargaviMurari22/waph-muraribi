@@ -16,7 +16,7 @@ Repository's URL: [https://github.com/BhargaviMurari22/waph-muraribi.git](https:
 ## Lab 2 - Front-end Web Development: 
 
 ## The lab's overview and outcomes:
-The lab is divided into two sections: one covering forms in basic HTML and JavaScript, and the other covering AJAX, CSS, JQuery, and Web API connection. The first step entails building a simple HTML webpage with forms and sending data to an Echo.php file via the GET and POST methods in JavaScript. The form data is transmitted via AJAX and JQuery in the second section, and CSS is used to alter the HTML text both structurally and aesthetically. Using the attached GitHub link, access the lab materials: https://github.com/BhargaviMurari22/waph-muraribi/edit/main/labs/lab2/README.md
+The lab is divided into two sections: one covering forms in basic HTML and JavaScript, and the other covering AJAX, CSS, JQuery, and Web API connection. The first step entails building a simple HTML webpage with forms and sending data to an Echo.php file via the GET and POST methods in JavaScript. The form data is transmitted via AJAX and JQuery in the second section, and CSS is used to alter the HTML text both structurally and aesthetically. Using the attached GitHub link, access the lab materials: https://github.com/BhargaviMurari22/waph-muraribi/tree/main/labs/lab2
 
 ### Task 1. Basic HTML with forms, and JavaScript
 # a. HTML
@@ -75,7 +75,7 @@ function showhideEmail(){
      shown = false;
    }
    else {
-     var myemail= "<a href='mailto:kamatikn"+"@"+"mail.uc.edu'>kamatikn"+ "@"+"mail.uc.edu</a>"
+     var myemail= "<a href='mailto:muraribi"+"@"+"mail.uc.edu'>muraribi"+ "@"+"mail.uc.edu</a>"
    document.getElementById('email').innerHTML=myemail;
    shown = true;
    }
