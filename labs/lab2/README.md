@@ -81,7 +81,7 @@ function showhideEmail(){
    }
  }
 ```
- The screenshot of the browser that shows the email hidden behind is below:
+ The screenshot of the browser that shows the email hidden behind is below: 
 
  ![IMG-9](imageslab2/IMG-9.png)
 
