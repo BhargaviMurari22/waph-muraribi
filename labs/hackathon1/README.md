@@ -24,7 +24,7 @@ URL used: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level0/echo.php)
 Script used for attacking:
 ```<script>alert("Level0: Hacked by BHARGAVI MURARI")</script>```
 
-![Hacked Level0](images/level0.png)
+![Hacked Level0](../../images/level0.png)
 
 
 
@@ -33,7 +33,7 @@ URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php)
 Script was written at the end of the URL as a path variable. The attacking script used was given below,
  ```?input=<script>alert("Level 1: Hacked by BHARGAVI MURARI")</script>```
 
- ![Hacked Level1](images/level1.png)
+ ![Hacked Level1](../../images/level1.png)
 
 
 ### LEVEL 2:
