@@ -20,6 +20,7 @@ The "Cross-site Scripting Attacks and Defenses" hackathon offers participants a 
 ## Task 1:
 ### LEVEL 0:
 URL used: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level0/echo.php)
+
 Script used for attacking:
 ```<script>alert("Level0: Hacked by BHARGAVI MURARI")</script>```
 
@@ -34,7 +35,9 @@ Script was written at the end of the URL as a path variable. The attacking scrip
 ### LEVEL 2:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level2/echo.php)
 This HTTP request has been converted into a basic HTML form as it does not include an input field and does not allow a path variable. The employment of a hacking script is then made easier by the attacking script being guided through this form.
+
 ```<script>alert("Level2 Hacked by BHARGAVI MURARI")</script>```
+
 Source Code Guess:
 ```
 if(!isset($_POST['input'])){
@@ -49,20 +52,25 @@ if(!isset($_POST['input'])){
 ### LEVEL 3:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php)
 This degree of security prevents the script tag from being directly entered into the input variable. To take use of this URL, the code was broken up into several pieces and connected to cause a warning to appear on the website.
-script tag used for attacking:
+
+Script tag used for attacking:
+
 ```?input=<script<script>>alert("Level 3 Hacked by BHARGAVI MURARI")</scrip</script>t>```
- Source code guess:
  
- Script tag may be substituted with a blank,
+ Source code guess: Script tag may be substituted with a blank,
  ```str_replace(['<script>', '</script>'], '', $input)```
  
 ![Hacked Level3](../../images/level3.png)
 
+
 ### LEVEL 4:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php)
 At this point, the script tag is fully filtered, thus it won't be able to be blocked even if the string is broken up and then joined together. Using the onerror() method of the tag to inject the XSS script allowed me to set off an alarm.
+
 Script tag used:
+
 ```?input=<img%20src="..." onerror="alert(Level 4: Hacked by BHARGAVI MURARI)">```
+
 Code injected:
 ```
 ?input=<button onclick="alert('Level4')"></button>
@@ -77,11 +85,14 @@ echo $data;
 
 ![Hacked Level4](../../images/level4.png)
 
+
 ### LEVEL 5:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php)
 Both the slert function and the tag are filtered at this level. I combined the button tag’s onerror function with unicode encoding to raise the popup alert.
+
 Code injected:
 ```?input=<img src="invalid" onerror="\u0061lert(Level 5: Hacked By BHARGAVI MURARI)">```
+
 Source Code Guess:
 ```
 $data = $_GET['input'];
@@ -92,7 +103,8 @@ $data = $_GET['input'];
  }
  ```
 
-![Hacked Level5](../../images/level4.png)
+![Hacked Level5](../../images/level5.png)
+
 
 ### LEVEL 6:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php)
@@ -103,6 +115,7 @@ This level still takes input even though I think the original code uses the html
  Input:<input type="text" name="input" />
  <input type="submit" name="Submit"/></form>
  ```
+
 Source Code Guess:
 ```echo htmlentities($_REQUEST('input'));```
 
@@ -142,6 +155,7 @@ ii) InnerText was substituted for innerHTML in cases when the display was plain 
 ![Validated Output](../../images/fig5.png)
 
  iii) To improve security by cleaning replies, a newly added function named encodeInput has been developed. To prevent cross-site scripting attacks, this entails transforming special characters into the proper HTML entities before adding them to the HTML content. As a result, the material is not executable and is handled as text only. InnerText is the material that is injected into a newly generated div element by the code. It is then given back as HTML content.
+ 
 ```
  function encodeInput(input){
  const encodedData = document.createElement('div');
@@ -160,6 +174,7 @@ iv) Updates have been made to the joke retrieval API to guarantee the accuracy o
  is either empty or non-zero. In addition, the data entered by the user is
  checked to make sure it is not null or empty. An error notification appears
  on each of these occasions.
+ 
 ```
 if(result.age==null || result.age==0)
 return $("#response")
