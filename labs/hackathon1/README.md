@@ -24,12 +24,16 @@ URL used: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level0/echo.php)
 Script used for attacking:
 ```<script>alert("Level0: Hacked by BHARGAVI MURARI")</script>```
 
+![Hacked Level0](images/level0.png)
+
 
 
 ### LEVEL 1:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php)
 Script was written at the end of the URL as a path variable. The attacking script used was given below,
  ```?input=<script>alert("Level 1: Hacked by BHARGAVI MURARI")</script>```
+
+ ![Hacked Level1](images/level1.png)
 
 
 ### LEVEL 2:
@@ -48,6 +52,7 @@ if(!isset($_POST['input'])){
 ```
 
 ![Hacked Level2](../../images/level2.png)
+
 
 ### LEVEL 3:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php)
@@ -87,18 +92,22 @@ echo $data;
 
 
 ### LEVEL 5:
-URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php)
+
+URLused: 
+(http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php)
 Both the slert function and the tag are filtered at this level. 
 I combined the button tag’s onerror function with unicode encoding 
 to raise the popup alert.
 
 
 Code injected:
+
 ```
 ?input=<img src="invalid" onerror="\u0061lert(Level 5: Hacked By BHARGAVI MURARI)">
 ```
 
 Source Code Guess:
+
 ```
 $data = $_GET['input'];
  if (preg_match('/<script\b[^>]*>(.*?)<\/script>/is', $data) || stripos($data, 'alert') !== false) {
@@ -109,11 +118,13 @@ $data = $_GET['input'];
  ```
 
 
+
 ![Hacked Level5](../../images/level5.png)
 
 
 ### LEVEL 6:
-URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php)
+URLused: 
+(http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php)
 This level still takes input even though I think the original 
 code uses the htmlentities method to translate necessary characters
 into their correct HTML entities. As a result, the webpage shows
