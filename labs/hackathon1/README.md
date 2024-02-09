@@ -8,7 +8,7 @@
 
 **Email**: muraribi@mail.uc.edu
 
-![Bhargavi's headshot](../../imageslab2/headshot.png)
+![Bhargavi's headshot](../../images/headshot1.png)
 
 ## Repository Information
 Repository's URL: [https://github.com/BhargaviMurari22/waph-muraribi.git](https://github.com/BhargaviMurari22/waph-muraribi.git)
