@@ -27,6 +27,7 @@ Script used for attacking:
 ```<script>alert("Level0: Hacked by BHARGAVI MURARI")</script>```
 
 ![Hacked Level0](../../images/level0.png)
+<p></p>
 
 
 
@@ -43,7 +44,7 @@ The attacking script used was given below,
  ```?input=<script>alert("Level 1: Hacked by BHARGAVI MURARI")</script>```
 
  ![Hacked Level1](../../images/level1.png)
-
+<p></p>
 
 ### LEVEL 2:
 
@@ -64,7 +65,7 @@ if(!isset($_POST['input'])){
 ```
 
 ![Hacked Level2](../../images/level2.png)
-
+<p></p>
 
 ### LEVEL 3:
 
@@ -81,7 +82,7 @@ Script tag used for attacking:
  ```str_replace(['<script>', '</script>'], '', $input)```
  
 ![Hacked Level3](../../images/level3.png)
-
+<p></p>
 
 ### LEVEL 4:
 
@@ -109,7 +110,7 @@ echo $data;
 
 
 ![Hacked Level4](../../images/level4.png)
-
+<p></p>
 
 ### LEVEL 5:
 
@@ -141,7 +142,7 @@ $data = $_GET['input'];
 
 
 ![Hacked Level5](../../images/level5.png)
-
+<p></p>
 
 ### LEVEL 6:
 
@@ -177,7 +178,7 @@ echo htmlentities($_REQUEST('input'));
 
 
 ![Hacked Level6](../../images/level6.png)
-
+<p></p>
 
 
 ## Task 2.
@@ -194,6 +195,7 @@ echo htmlentities($_REQUEST['data']);
 ```
 
 ![Revised echo.php with added defense mechanism](../../images/fig1.png)
+
 
 B. Once external input points were identified, the waph-muraribi.html code underwent a significant change. After each of these inputs was verified, the result texts were edited.
 i) There is now validation applied to the input data for the HTTP GET and POST request forms. The request cannot be handled until the user input has been validated thanks to the introduction of a new function called validateInput.
