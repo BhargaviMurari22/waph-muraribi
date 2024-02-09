@@ -8,7 +8,7 @@
 
 **Email**: muraribi@mail.uc.edu
 
-![Bhargavi's headshot](imageslab2/headshot.png)
+![Bhargavi's headshot](../../imageslab2/headshot.png)
 
 ## Repository Information
 Repository's URL: [https://github.com/BhargaviMurari22/waph-muraribi.git](https://github.com/BhargaviMurari22/waph-muraribi.git)
@@ -44,9 +44,9 @@ if(!isset($_POST['input'])){
  }
 ```
 
-![](images/level2.png)
+![](../../images/level2.png)
 
-![Hacked Level2](images/level2.png)
+![Hacked Level2](../../images/level2.png)
 
 #LEVEL 3:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php)
@@ -58,9 +58,9 @@ script tag used for attacking:
  Script tag may be substituted with a blank,
  ```str_replace(['<script>', '</script>'], '', $input)```
  
-![](images/level3.png)
+![](../../images/level3.png)
 
-![Hacked Level3](images/level3.png)
+![Hacked Level3](../../images/level3.png)
 
 #LEVEL 4:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php)
@@ -78,9 +78,9 @@ exit('{"error": "No \'script\' is allowed!"}');
 echo $data;
 }
 ```
-![](images/level4.png)
+![](../../images/level4.png)
 
-![Hacked Level4](images/level4.png)
+![Hacked Level4](../../images/level4.png)
 
 #LEVEL 5:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php)
@@ -96,9 +96,9 @@ $data = $_GET['input'];
  echo $data;
  }
  ```
-![](images/level5.png)
+![](../../images/level5.png)
 
-![Hacked Level5](images/level4.png)
+![Hacked Level5](../../images/level4.png)
 
 #LEVEL 6:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php)
@@ -112,9 +112,9 @@ This level still takes input even though I think the original code uses the html
 Source Code Guess:
 ```echo htmlentities($_REQUEST('input'));```
 
-![](images/level6.png)
+![](../../images/level6.png)
 
-![Hacked Level6](images/level6.png)
+![Hacked Level6](../../images/level6.png)
 
 
 ### Task 2.
@@ -129,31 +129,31 @@ echo htmlentities($_REQUEST['data']);
 ?>
 ```
 
-![](images/fig1.png)
+![](../../images/fig1.png)
 
-![Revised echo.php with added defense mechanism](images/fig1.png)
+![Revised echo.php with added defense mechanism](../../images/fig1.png)
 
 B. Once external input points were identified, the waph-muraribi.html code underwent a significant change. After each of these inputs was verified, the result texts were edited.
 i) There is now validation applied to the input data for the HTTP GET and POST request forms. The request cannot be handled until the user input has been validated thanks to the introduction of a new function called validateInput.
 
-![](images/fig2.png)
+![](../../images/fig2.png)
 
-![waph-muraribi.html defense code](images/fig2.png)
+![waph-muraribi.html defense code](../../images/fig2.png)
 
-![](images/fig3.png)
+![](../../images/fig3.png)
 
-![Validating inputs](images/fig3.png)
+![Validating inputs](../../images/fig3.png)
 
 
 ii) InnerText was substituted for innerHTML in cases when the display was plain text and HTML rendering was not required.
 
-![](images/fig4.png)
+![](../../images/fig4.png)
 
-![Modified html to text](images/fig4.png)
+![Modified html to text](../../images/fig4.png)
 
-![](images/fig5.png)
+![](../../images/fig5.png)
 
-![Validated Output](images/fig5.png)
+![Validated Output](../../images/fig5.png)
 
  iii) To improve security by cleaning replies, a newly added function named encodeInput has been developed. To prevent cross-site scripting attacks, this entails transforming special characters into the proper HTML entities before adding them to the HTML content. As a result, the material is not executable and is handled as text only. InnerText is the material that is injected into a newly generated div element by the code. It is then given back as HTML content.
 ```
@@ -163,15 +163,15 @@ ii) InnerText was substituted for innerHTML in cases when the display was plain 
  return encodedData.innerHTML;
  }
 ```
-![](images/fig6.png)
+![](../../images/fig6.png)
 
-![Encode input function](images/fig6.png)
+![Encode input function](../../images/fig6.png)
 
 iv) Updates have been made to the joke retrieval API to guarantee the accuracy of the results that are received. New validations have been added, which verify that jokes in JSON are not empty. An error notice appears when the result is null.
 
-![](images/fig8.png)
+![](../../images/fig8.png)
 
-![Defense to displaying joke](images/fig8.png)
+![Defense to displaying joke](../../images/fig8.png)
 
  v) It is confirmed that the asynchronous method guessAge’s received result
  is either empty or non-zero. In addition, the data entered by the user is
@@ -183,6 +183,6 @@ return $("#response")
 .text("An error occured at this moment, So age cant be displayed");
 $("#response").text("Hello "+name+" ,your age should be "+result.age);
 ```
-![](images/fig9.png)
+![](../../images/fig9.png)
 
-![Validated Guess Age](images/fig9.png)
+![Validated Guess Age](../../images/fig9.png)
