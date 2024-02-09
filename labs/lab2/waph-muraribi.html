@@ -83,6 +83,9 @@ cursor: pointer;
 </div>
 <script >
 	async function guessAge(name){
+		if(name==null || name.trim() == ''){
+			return $("#response").text("kindly enter a valid name");
+		}
 		const response =await fetch("https://api.agify.io/?name="+name);
 		const result=await response.json();
 		// $("#response").html("Hi"+name + ",your age should  be "+ result.age);
