@@ -18,20 +18,20 @@ Repository's URL: [https://github.com/BhargaviMurari22/waph-muraribi.git](https:
 The "Cross-site Scripting Attacks and Defenses" hackathon offers participants a thorough exploration of online application security, placing special emphasis on addressing the pervasive threat of cross-site scripting (XSS) attacks. Through hands-on lab exercises, attendees gain firsthand experience in understanding the risks associated with XSS vulnerabilities. These vulnerabilities pose serious threats to user data, session cookies, and the overall system integrity of web applications, allowing the injection and execution of scripts on legitimate web pages. The hackathon aims to empower participants with the knowledge and skills necessary to both exploit and defend against XSS vulnerabilities. The primary focus is on implementing robust defense strategies to significantly mitigate these risks. Using the attached GitHub link, access the lab materials: https://github.com/BhargaviMurari22/waph-muraribi/tree/main/labs/hackathon1
 
 ### Task 1:
-# LEVEL 0:
+## LEVEL 0:
 URL used: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level0/echo.php)
 Script used for attacking:
 ```<script>alert("Level0: Hacked by BHARGAVI MURARI")</script>```
 
 
 
-#LEVEL 1:
+## LEVEL 1:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php)
 Script was written at the end of the URL as a path variable. The attacking script used was given below,
  ```?input=<script>alert("Level 1: Hacked by BHARGAVI MURARI")</script>```
 
 
-#LEVEL 2:
+# LEVEL 2:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level2/echo.php)
 This HTTP request has been converted into a basic HTML form as it does not include an input field and does not allow a path variable. The employment of a hacking script is then made easier by the attacking script being guided through this form.
 ```<script>alert("Level2 Hacked by BHARGAVI MURARI")</script>```
@@ -48,7 +48,7 @@ if(!isset($_POST['input'])){
 
 ![Hacked Level2](../../images/level2.png)
 
-#LEVEL 3:
+# LEVEL 3:
 URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php)
 This degree of security prevents the script tag from being directly entered into the input variable. To take use of this URL, the code was broken up into several pieces and connected to cause a warning to appear on the website.
 script tag used for attacking:
