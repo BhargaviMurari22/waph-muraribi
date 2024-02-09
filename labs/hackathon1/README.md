@@ -143,6 +143,7 @@ i) There is now validation applied to the input data for the HTTP GET and POST r
 ![waph-muraribi.html defense code](../../images/fig2.png)
 
 
+
 ![Validating inputs](../../images/fig3.png)
 
 
