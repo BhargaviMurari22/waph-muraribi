@@ -91,7 +91,9 @@ URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php)
 Both the slert function and the tag are filtered at this level. I combined the button tag’s onerror function with unicode encoding to raise the popup alert.
 
 Code injected:
-```?input=<img src="invalid" onerror="\u0061lert(Level 5: Hacked By BHARGAVI MURARI)">```
+```
+?input=<img src="invalid" onerror="\u0061lert(Level 5: Hacked By BHARGAVI MURARI)">
+```
 
 Source Code Guess:
 ```
@@ -102,6 +104,7 @@ $data = $_GET['input'];
  echo $data;
  }
  ```
+
 
 ![Hacked Level5](../../images/level5.png)
 
@@ -117,7 +120,10 @@ This level still takes input even though I think the original code uses the html
  ```
 
 Source Code Guess:
-```echo htmlentities($_REQUEST('input'));```
+```
+echo htmlentities($_REQUEST('input'));
+```
+
 
 ![Hacked Level6](../../images/level6.png)
 
