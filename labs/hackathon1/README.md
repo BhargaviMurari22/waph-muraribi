@@ -29,8 +29,12 @@ Script used for attacking:
 
 
 ### LEVEL 1:
-URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php)
-Script was written at the end of the URL as a path variable. The attacking script used was given below,
+URLused: 
+(http://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php)
+
+Script was written at the end of the URL as a path variable. 
+The attacking script used was given below,
+
  ```?input=<script>alert("Level 1: Hacked by BHARGAVI MURARI")</script>```
 
  ![Hacked Level1](../../images/level1.png)
@@ -125,6 +129,7 @@ $data = $_GET['input'];
 ### LEVEL 6:
 URLused: 
 (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php)
+
 This level still takes input even though I think the original 
 code uses the htmlentities method to translate necessary characters
 into their correct HTML entities. As a result, the webpage shows
@@ -132,9 +137,11 @@ user input as plain text. In certain situations, JavaScript
 eventListeners like onmouseover, onclick, onkeyup, and onmouseenter
 can be used to initiate an alert. In this case, every time a key 
 is hit in the input field, the onmouseenter eventListener that 
-I used triggers an alarm on the website. The input form element 
+I used triggers an alarm on the website. 
+The input form element 
 is altered when the script is inserted through the URL, 
-as shown in the illustration below. It appends to the code.
+as shown in the illustration below. 
+It appends to the code.
 
 
  ```
@@ -144,6 +151,7 @@ as shown in the illustration below. It appends to the code.
  ```
 
 Source Code Guess:
+
 ```
 echo htmlentities($_REQUEST('input'));
 ```
