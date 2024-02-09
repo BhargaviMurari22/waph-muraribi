@@ -19,7 +19,9 @@ The "Cross-site Scripting Attacks and Defenses" hackathon offers participants a 
 
 ## Task 1:
 ### LEVEL 0:
-URL used: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level0/echo.php)
+
+URL used: 
+(http://waph-hackathon.eastus.cloudapp.azure.com/xss/level0/echo.php)
 
 Script used for attacking:
 ```<script>alert("Level0: Hacked by BHARGAVI MURARI")</script>```
@@ -29,10 +31,13 @@ Script used for attacking:
 
 
 ### LEVEL 1:
+
 URLused: 
+
 (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php)
 
 Script was written at the end of the URL as a path variable. 
+
 The attacking script used was given below,
 
  ```?input=<script>alert("Level 1: Hacked by BHARGAVI MURARI")</script>```
@@ -41,7 +46,10 @@ The attacking script used was given below,
 
 
 ### LEVEL 2:
-URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level2/echo.php)
+
+URLused: 
+
+(http://waph-hackathon.eastus.cloudapp.azure.com/xss/level2/echo.php)
 This HTTP request has been converted into a basic HTML form as it does not include an input field and does not allow a path variable. The employment of a hacking script is then made easier by the attacking script being guided through this form.
 
 ```<script>alert("Level2 Hacked by BHARGAVI MURARI")</script>```
@@ -59,7 +67,10 @@ if(!isset($_POST['input'])){
 
 
 ### LEVEL 3:
-URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php)
+
+URLused:
+
+(http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php)
 This degree of security prevents the script tag from being directly entered into the input variable. To take use of this URL, the code was broken up into several pieces and connected to cause a warning to appear on the website.
 
 Script tag used for attacking:
@@ -73,7 +84,10 @@ Script tag used for attacking:
 
 
 ### LEVEL 4:
-URLused: (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php)
+
+URLused: 
+
+(http://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php)
 At this point, the script tag is fully filtered, thus it won't be able to be blocked even if the string is broken up and then joined together. Using the onerror() method of the tag to inject the XSS script allowed me to set off an alarm.
 
 Script tag used:
@@ -81,6 +95,7 @@ Script tag used:
 ```?input=<img%20src="..." onerror="alert(Level 4: Hacked by BHARGAVI MURARI)">```
 
 Code injected:
+
 ```
 ?input=<button onclick="alert('Level4')"></button>
 Source code guess:
@@ -92,12 +107,14 @@ echo $data;
 }
 ```
 
+
 ![Hacked Level4](../../images/level4.png)
 
 
 ### LEVEL 5:
 
 URLused: 
+
 (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php)
 Both the slert function and the tag are filtered at this level. 
 I combined the button tag’s onerror function with unicode encoding 
@@ -127,7 +144,9 @@ $data = $_GET['input'];
 
 
 ### LEVEL 6:
+
 URLused: 
+
 (http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php)
 
 This level still takes input even though I think the original 
@@ -160,7 +179,9 @@ echo htmlentities($_REQUEST('input'));
 ![Hacked Level6](../../images/level6.png)
 
 
+
 ## Task 2.
+
 A. By adding code for input validation and editing the echo.php file, Lab 1's defensive measures against XSS were put into place. After a preliminary check to make sure the input is empty, PHP is stopped from running. When the input is verified as genuine, the htmlentities technique is used to clean it up. It then gets converted into the appropriate HTML characters so that it shows up on the page as text only.
 
 echo.php defence
